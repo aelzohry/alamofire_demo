@@ -14,12 +14,18 @@ struct URLs {
 //    static let main = "http://127.0.0.1:8000/api/v1/"
     static let main = "http://elzohrytech.com/alamofire_demo/api/v1/"
     
+    
+    // MARK:- AUTH
+    
     /// POST {email, password}
     static let login = main + "login"
     
     /// POST {name, email, password, password_confirmation}
     static let register = main + "register"
     
+    
+    // MARK:- TASKS
+
     /// GET {api_token, page, per_page}
     static let tasks = main + "tasks"
     
@@ -32,4 +38,20 @@ struct URLs {
     /// POST {api_token, task_id}
     static let delete_task = main + "task/delete"
     
+    
+    // MARK:- PHOTOS
+    
+    /// GET {api_token}
+    static let photos = main + "photos"
+    
+    /// POST {api_token} and file {photo}
+    static let create_photo = main + "photo/create"
 }
+
+
+
+
+
+
+
+

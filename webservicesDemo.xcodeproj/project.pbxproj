@@ -15,6 +15,10 @@
 		E205A76B1E42C84B00619D37 /* JSON+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E205A76A1E42C84B00619D37 /* JSON+Extension.swift */; };
 		E21457721E42DB39004A50EB /* Bool+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21457711E42DB39004A50EB /* Bool+Extension.swift */; };
 		E21457741E42E18D004A50EB /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21457731E42E18D004A50EB /* TaskCell.swift */; };
+		E217F3021E4700E6002B7E63 /* PhotosVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E217F3011E4700E6002B7E63 /* PhotosVC.swift */; };
+		E217F3051E47016B002B7E63 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E217F3031E47016B002B7E63 /* PhotoCell.swift */; };
+		E217F3061E47016B002B7E63 /* PhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E217F3041E47016B002B7E63 /* PhotoCell.xib */; };
+		E217F3081E470253002B7E63 /* placehoder.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E217F3071E470253002B7E63 /* placehoder.jpg */; };
 		E22179611E405438002D384D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22179601E405438002D384D /* AppDelegate.swift */; };
 		E22179631E405438002D384D /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22179621E405438002D384D /* LoginVC.swift */; };
 		E22179661E405438002D384D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E22179641E405438002D384D /* Main.storyboard */; };
@@ -23,6 +27,7 @@
 		E22179761E405438002D384D /* webservicesDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22179751E405438002D384D /* webservicesDemoTests.swift */; };
 		E22179811E405438002D384D /* webservicesDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22179801E405438002D384D /* webservicesDemoUITests.swift */; };
 		E267E9362AAE77807FC9ED0F /* Pods_webservicesDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB08213C564711E65499E73B /* Pods_webservicesDemo.framework */; };
+		E27834E01E4ACBD100B8F191 /* API+Photos.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27834DF1E4ACBD100B8F191 /* API+Photos.swift */; };
 		E2D093041E405AE4001BFB76 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D093031E405AE4001BFB76 /* RegisterVC.swift */; };
 		E2D093071E405B6F001BFB76 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D093061E405B6F001BFB76 /* API.swift */; };
 		E2D0930A1E405C7E001BFB76 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D093091E405C7E001BFB76 /* String+Extension.swift */; };
@@ -62,6 +67,10 @@
 		E205A76A1E42C84B00619D37 /* JSON+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "JSON+Extension.swift"; path = "Extensions/JSON+Extension.swift"; sourceTree = "<group>"; };
 		E21457711E42DB39004A50EB /* Bool+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Bool+Extension.swift"; path = "Extensions/Bool+Extension.swift"; sourceTree = "<group>"; };
 		E21457731E42E18D004A50EB /* TaskCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TaskCell.swift; path = Controller/Tasks/TaskCell.swift; sourceTree = "<group>"; };
+		E217F3011E4700E6002B7E63 /* PhotosVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhotosVC.swift; path = Controller/Photos/PhotosVC.swift; sourceTree = "<group>"; };
+		E217F3031E47016B002B7E63 /* PhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhotoCell.swift; path = Controller/Photos/PhotoCell.swift; sourceTree = "<group>"; };
+		E217F3041E47016B002B7E63 /* PhotoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PhotoCell.xib; path = Controller/Photos/PhotoCell.xib; sourceTree = "<group>"; };
+		E217F3071E470253002B7E63 /* placehoder.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = placehoder.jpg; sourceTree = "<group>"; };
 		E221795D1E405438002D384D /* webservicesDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = webservicesDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E22179601E405438002D384D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E22179621E405438002D384D /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -75,6 +84,7 @@
 		E221797C1E405438002D384D /* webservicesDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = webservicesDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E22179801E405438002D384D /* webservicesDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = webservicesDemoUITests.swift; sourceTree = "<group>"; };
 		E22179821E405438002D384D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E27834DF1E4ACBD100B8F191 /* API+Photos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "API+Photos.swift"; path = "API/API+Photos.swift"; sourceTree = "<group>"; };
 		E2D093031E405AE4001BFB76 /* RegisterVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		E2D093061E405B6F001BFB76 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = API.swift; path = API/API.swift; sourceTree = "<group>"; };
 		E2D093091E405C7E001BFB76 /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+Extension.swift"; path = "Extensions/String+Extension.swift"; sourceTree = "<group>"; };
@@ -160,6 +170,16 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		E217F3001E4700CE002B7E63 /* Photos */ = {
+			isa = PBXGroup;
+			children = (
+				E217F3011E4700E6002B7E63 /* PhotosVC.swift */,
+				E217F3031E47016B002B7E63 /* PhotoCell.swift */,
+				E217F3041E47016B002B7E63 /* PhotoCell.xib */,
+			);
+			name = Photos;
+			sourceTree = "<group>";
+		};
 		E22179541E405438002D384D = {
 			isa = PBXGroup;
 			children = (
@@ -219,6 +239,7 @@
 		E2D093011E405AAB001BFB76 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E217F3001E4700CE002B7E63 /* Photos */,
 				E205A7621E42AD9500619D37 /* Tasks */,
 				E205A7611E42AD9100619D37 /* Auth */,
 			);
@@ -228,6 +249,7 @@
 		E2D093021E405AB3001BFB76 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E217F3071E470253002B7E63 /* placehoder.jpg */,
 				E22179671E405438002D384D /* Assets.xcassets */,
 				E22179691E405438002D384D /* LaunchScreen.storyboard */,
 				E221796C1E405438002D384D /* Info.plist */,
@@ -240,6 +262,7 @@
 			children = (
 				E2D093061E405B6F001BFB76 /* API.swift */,
 				E205A7651E42B08600619D37 /* API+Tasks.swift */,
+				E27834DF1E4ACBD100B8F191 /* API+Photos.swift */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -331,6 +354,7 @@
 				TargetAttributes = {
 					E221795C1E405438002D384D = {
 						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = KYCVLD89Y4;
 						ProvisioningStyle = Automatic;
 					};
 					E22179701E405438002D384D = {
@@ -370,6 +394,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E217F3061E47016B002B7E63 /* PhotoCell.xib in Resources */,
+				E217F3081E470253002B7E63 /* placehoder.jpg in Resources */,
 				E221796B1E405438002D384D /* LaunchScreen.storyboard in Resources */,
 				E22179681E405438002D384D /* Assets.xcassets in Resources */,
 				E22179661E405438002D384D /* Main.storyboard in Resources */,
@@ -536,6 +562,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2D093041E405AE4001BFB76 /* RegisterVC.swift in Sources */,
+				E217F3051E47016B002B7E63 /* PhotoCell.swift in Sources */,
 				E205A76B1E42C84B00619D37 /* JSON+Extension.swift in Sources */,
 				E22179631E405438002D384D /* LoginVC.swift in Sources */,
 				E21457721E42DB39004A50EB /* Bool+Extension.swift in Sources */,
@@ -544,8 +571,10 @@
 				E205A7661E42B08600619D37 /* API+Tasks.swift in Sources */,
 				E2D093071E405B6F001BFB76 /* API.swift in Sources */,
 				E2D0930A1E405C7E001BFB76 /* String+Extension.swift in Sources */,
+				E217F3021E4700E6002B7E63 /* PhotosVC.swift in Sources */,
 				E22179611E405438002D384D /* AppDelegate.swift in Sources */,
 				E2D0930C1E405D9E001BFB76 /* Config.swift in Sources */,
+				E27834E01E4ACBD100B8F191 /* API+Photos.swift in Sources */,
 				E21457741E42E18D004A50EB /* TaskCell.swift in Sources */,
 				E205A7641E42ADA400619D37 /* TasksVC.swift in Sources */,
 			);
@@ -700,6 +729,7 @@
 			baseConfigurationReference = 442E966EA6B4FAFA37EE6609 /* Pods-webservicesDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = KYCVLD89Y4;
 				INFOPLIST_FILE = webservicesDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.aelzohry.webservicesDemo;
@@ -713,6 +743,7 @@
 			baseConfigurationReference = A7A78855F78CF32A2675BD5F /* Pods-webservicesDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = KYCVLD89Y4;
 				INFOPLIST_FILE = webservicesDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.aelzohry.webservicesDemo;

@@ -89,10 +89,10 @@
             </objects>
             <point key="canvasLocation" x="933.60000000000002" y="790.25487256371821"/>
         </scene>
-        <!--Item 2-->
+        <!--Photos-->
         <scene sceneID="Z7i-Rj-iO6">
             <objects>
-                <viewController id="eP4-4v-EOk" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="eP4-4v-EOk" customClass="PhotosVC" customModule="webservicesDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="r58-IC-hj2"/>
                         <viewControllerLayoutGuide type="bottom" id="nY5-qA-4Vs"/>
@@ -100,13 +100,35 @@
                     <view key="view" contentMode="scaleToFill" id="EsR-FI-GQg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4jz-CI-R60">
+                                <rect key="frame" x="10" y="64" width="355" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="eRw-4I-9Dn">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nY5-qA-4Vs" firstAttribute="top" secondItem="4jz-CI-R60" secondAttribute="bottom" id="4qj-Xy-EUJ"/>
+                            <constraint firstItem="4jz-CI-R60" firstAttribute="top" secondItem="r58-IC-hj2" secondAttribute="bottom" id="BmZ-FQ-7FB"/>
+                            <constraint firstItem="4jz-CI-R60" firstAttribute="leading" secondItem="EsR-FI-GQg" secondAttribute="leading" constant="10" id="Uvk-T9-XyY"/>
+                            <constraint firstAttribute="trailing" secondItem="4jz-CI-R60" secondAttribute="trailing" constant="10" id="dr5-pS-7YI"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="OPv-TU-oNN"/>
+                    <navigationItem key="navigationItem" title="Photos" id="srt-s6-7ZZ"/>
+                    <connections>
+                        <outlet property="collectionView" destination="4jz-CI-R60" id="Wuo-bn-eQk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7oq-Vk-I20" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1578" y="2390"/>
+            <point key="canvasLocation" x="2516" y="2389.6551724137935"/>
         </scene>
         <!--Tasks-->
         <scene sceneID="2Xf-Wd-czc">
@@ -153,7 +175,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="y8I-OY-TUB" kind="relationship" relationship="viewControllers" id="tjp-J1-8jl"/>
-                        <segue destination="eP4-4v-EOk" kind="relationship" relationship="viewControllers" id="8RB-35-5nQ"/>
+                        <segue destination="5bw-Gq-q1D" kind="relationship" relationship="viewControllers" id="8RB-35-5nQ"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2ZI-D9-39z" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -292,6 +314,27 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aGd-Li-DBo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1576.8" y="1718.5907046476764"/>
+        </scene>
+        <!--Photos-->
+        <scene sceneID="ut8-2L-Gw7">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5bw-Gq-q1D" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Photos" id="OPv-TU-oNN">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-12"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4eH-02-gRJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="eP4-4v-EOk" kind="relationship" relationship="rootViewController" id="Sup-eG-ISo"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cqA-zI-Tw2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1576.8" y="2389.6551724137935"/>
         </scene>
     </scenes>
 </document>
