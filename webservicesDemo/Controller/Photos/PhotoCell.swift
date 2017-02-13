@@ -7,14 +7,28 @@
 //
 
 import UIKit
+import Alamofire
+// AlamofireImage
+// Kingfisher
+
 
 class PhotoCell: UICollectionViewCell {
 
     @IBOutlet weak var iv: UIImageView!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-    }
+    var photo: Photo? {
+        didSet {
+            guard let photo = photo else { return }
 
+            self.iv.image = #imageLiteral(resourceName: "placehoder.jpg")
+            
+            // download image
+            Alamofire.request(photo.url).response { response in
+                if let data = response.data, let image = UIImage(data: data) {
+                    self.iv.image = image
+                }
+            }
+        }
+    }
+    
 }

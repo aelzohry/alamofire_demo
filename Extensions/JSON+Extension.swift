@@ -34,4 +34,22 @@ extension JSON {
         return nil
     }
     
+    var toImagePath: String? {
+        guard let string = self.string, !string.isEmpty else { return nil }
+        
+        return URLs.file_root + string
+    }
+    
 }
+
+
+
+
+
+
+
+
+
+
+
+

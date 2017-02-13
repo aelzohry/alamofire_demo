@@ -13,7 +13,7 @@ struct URLs {
     
 //    static let main = "http://127.0.0.1:8000/api/v1/"
     static let main = "http://elzohrytech.com/alamofire_demo/api/v1/"
-    
+    static let file_root = "http://www.elzohrytech.com/alamofire_demo/"
     
     // MARK:- AUTH
     

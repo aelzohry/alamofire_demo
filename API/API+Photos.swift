@@ -13,6 +13,45 @@ import SwiftyJSON
 
 extension API {
     
+    class func photos(page: Int = 1, completion: @escaping (_ error: Error?, _ photos: [Photo]?, _ last_page: Int)->Void) {
+        guard let api_token = helper.getApiToken() else {
+            completion(nil, nil, page)
+            return
+        }
+        
+        let url = URLs.photos+"?api_token=\(api_token)"
+        
+        Alamofire.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil).responseJSON { response in
+            
+            switch response.result
+            {
+            case .failure(let error):
+                print(error)
+                completion(error, nil, page)
+                
+            case .success(let value):
+                let json = JSON(value)
+                print(json)
+                
+                guard let data = json["data"].array else {
+                    completion(nil, nil, page)
+                    return
+                }
+                
+                var photos = [Photo]()
+                data.forEach({
+                    if let dict = $0.dictionary, let photo = Photo(dict: dict) {
+                        photos.append(photo)
+                    }
+                })
+                
+                let last_page = json["last_page"].toInt ?? page
+                completion(nil, photos, last_page)
+            }
+            
+        }
+    }
+    
     class func createPhoto(photo: UIImage, completion: @escaping (_ error: Error?, _ success: Bool)->Void) {
         
         guard let api_token = helper.getApiToken() else {

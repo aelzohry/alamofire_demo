@@ -20,33 +20,38 @@ class PhotosVC: UIViewController {
         return button
     }()
     
-    var images = [UIImage]()
+    lazy var refresher: UIRefreshControl = {
+        let refresher = UIRefreshControl()
+        refresher.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
+        
+        return refresher
+    }()
+
+    
+    var photos = [Photo]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        images = Array.init(repeating: #imageLiteral(resourceName: "placehoder.jpg"), count: 5)
         
         navigationItem.rightBarButtonItem = addButton
         
         view.backgroundColor = .white
         collectionView.backgroundColor = .clear
         collectionView.alwaysBounceVertical = true
+        collectionView.addSubview(refresher)
         
         collectionView.register(UINib.init(nibName: cellIdentifier, bundle: nil), forCellWithReuseIdentifier: cellIdentifier)
         
         collectionView.dataSource = self
         collectionView.delegate = self
+        
+        handleRefresh()
     }
     
     var picker_image: UIImage? {
         didSet {
             // execute some code
             guard let image = picker_image else { return }
-            
-            // add temorarily to array of images
-            self.images.append(image)
-            self.collectionView.reloadData()
             
             // send to server
             API.createPhoto(photo: image) { (error: Error?, success: Bool) in
@@ -67,6 +72,48 @@ class PhotosVC: UIViewController {
         
         self.present(picker, animated: true, completion: nil)
     }
+    
+    // MARK:- Loading Data
+    
+    var isLoading: Bool = false
+    var current_page = 1
+    var last_page = 1
+    
+    @objc fileprivate func handleRefresh() {
+        self.refresher.endRefreshing()
+        guard !isLoading else { return }
+        
+        isLoading = true
+        API.photos { (error: Error?, photos: [Photo]?, last_page: Int) in
+            self.isLoading = false
+            if let photos = photos {
+                self.photos = photos
+                self.collectionView.reloadData()
+                
+                self.current_page = 1
+                self.last_page = last_page
+            }
+        }
+        
+    }
+    
+    fileprivate func loadMore() {
+        guard !isLoading else { return }
+        guard current_page < last_page else { return }
+        
+        isLoading = true
+        API.photos(page: current_page+1) { (error: Error?, photos: [Photo]?, last_page: Int) in
+            self.isLoading = false
+            if let photos = photos {
+                self.photos.append(contentsOf: photos)
+                self.collectionView.reloadData()
+                
+                self.current_page += 1
+                self.last_page = last_page
+            }
+        }
+    }
+    
 }
 
 extension PhotosVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -91,13 +138,13 @@ extension PhotosVC: UIImagePickerControllerDelegate, UINavigationControllerDeleg
 extension PhotosVC: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return images.count
+        return photos.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as? PhotoCell else { return UICollectionViewCell() }
         
-        cell.iv.image = images[indexPath.row]
+        cell.photo = photos[indexPath.item]
         
         return cell
     }
